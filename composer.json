@@ -1,19 +1,44 @@
 {
     "name": "lava/magmacore",
     "description": "A simple PHP framework for building web applications.",
+    "keywords": [
+        "framework",
+        "php",
+        "magmacore"
+    ],
     "type": "library",
     "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Lava\\Magmacore\\": "src/"
-        }
+    "readme": "",
+    "support": {
+        "issues": "https://github.com/J-Rayln/MagmaCore/issues",
+        "source": "https://github.com/J-Rayln/MagmaCore",
+        "wiki": "https://github.com/J-Rayln/MagmaCore/wiki"
     },
     "authors": [
         {
             "name": "Michael Morales",
-            "email": "m@jrayln.com"
+            "email": "m@jrayln.com",
+            "role": "Developer"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Magma\\": "src/Magma"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Magma\\Tests\\": "tests"
+        }
+    },
     "minimum-stability": "alpha",
-    "require": {}
+    "require": {
+        "php": "7.4.2|^8.0",
+        "ext-mbstring": "*",
+        "ext-iconv": "*",
+        "ext-pdo": "*",
+        "ext-json": "*",
+        "ext-curl": "*",
+        "ext-simplexml": "*"
+    }
 }
