@@ -1,0 +1,19 @@
+{
+    "name": "lava/magmacore",
+    "description": "A simple PHP framework for building web applications.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Lava\\Magmacore\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Michael Morales",
+            "email": "m@jrayln.com"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "require": {}
+}
