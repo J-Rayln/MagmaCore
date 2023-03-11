@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Magma\DataMapper;
+namespace Magma\LiquidOrm\DataMapper;
 
 use Magma\DatabaseConnection\DatabaseConnectionInterface;
-use Magma\DataMapper\Exception\DataMapperException;
+use Magma\LiquidOrm\DataMapper\Exception\DataMapperException;
 use PDOStatement;
 use Throwable;
 use PDO;

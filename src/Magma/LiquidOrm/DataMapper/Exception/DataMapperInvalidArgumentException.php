@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Magma\DataMapper\Exception;
+namespace Magma\LiquidOrm\DataMapper\Exception;
 
 use InvalidArgumentException;
 
