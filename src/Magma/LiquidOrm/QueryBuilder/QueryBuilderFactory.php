@@ -24,6 +24,6 @@ class QueryBuilderFactory
         if (!$queryBuilderObject instanceof QueryBuilderInterface) {
             throw new QueryBuilderException($queryBuilderString . ' is not a valid Query Builder object.');
         }
-        return new QueryBuilder();
+        return $queryBuilderObject;
     }
 }

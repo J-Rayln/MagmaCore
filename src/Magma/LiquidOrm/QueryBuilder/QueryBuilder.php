@@ -29,7 +29,7 @@ class QueryBuilder implements QueryBuilderInterface
         'raw' => ''
     ];
 
-    protected const QUERY_TYPES = ['insert', 'select', 'update', 'delete', 'raw'];
+    protected const QUERY_TYPES = ['insert', 'select', 'update', 'delete', 'raw', 'search'];
 
     /**
      * Main constructor class.
@@ -121,6 +121,16 @@ class QueryBuilder implements QueryBuilderInterface
             return $this->sqlQuery;
         }
         return false;
+    }
+
+    public function searchQuery(): string
+    {
+        return '';
+    }
+
+    public function rawQuery(): string
+    {
+        return '';
     }
 
     private function hasConditions()
