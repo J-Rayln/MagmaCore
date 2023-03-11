@@ -155,9 +155,7 @@ class DataMapper implements DataMapperInterface
      */
     public function execute(): void
     {
-        if ($this->statement) {
-            return $this->statement->execute();
-        }
+        if ($this->statement) return $this->statement->execute();
     }
 
     /**
@@ -167,9 +165,7 @@ class DataMapper implements DataMapperInterface
      */
     public function numRows(): int
     {
-        if ($this->statement) {
-            return $this->statement->rowCount();
-        }
+        if ($this->statement) return $this->statement->rowCount();
     }
 
     /**
@@ -179,9 +175,7 @@ class DataMapper implements DataMapperInterface
      */
     public function result(): object
     {
-        if ($this->statement) {
-            return $this->statement->fetch(PDO::FETCH_OBJ);
-        }
+        if ($this->statement) return $this->statement->fetch(PDO::FETCH_OBJ);
     }
 
     /**
@@ -191,9 +185,7 @@ class DataMapper implements DataMapperInterface
      */
     public function results(): array
     {
-        if ($this->statement) {
-            return $this->statement->fetchAll();
-        }
+        if ($this->statement) return $this->statement->fetchAll();
     }
 
     /**
@@ -211,6 +203,34 @@ class DataMapper implements DataMapperInterface
                     return intval($lastId);
                 }
             }
+        } catch (Throwable $throwable) {
+            throw $throwable;
+        }
+    }
+    /**
+     * Returns the query condition merged with the query parameters.
+     * 
+     * @param array $conditions 
+     * @param array $parameters 
+     * @return array 
+     */
+    public function buildQueryParameters(array $conditions = [], array $parameters = []): array
+    {
+        return (!empty($parameters) || (!empty($conditions)) ? array_merge($conditions, $parameters) : $parameters);
+    }
+
+    /**
+     * Persist queries to the database.
+     * 
+     * @param string $sqlQuery 
+     * @param array $parameters 
+     * @return void 
+     * @throws Throwable 
+     */
+    public function persist(string $sqlQuery, array $parameters)
+    {
+        try {
+            return $this->prepare($sqlQuery)->bindParameters($parameters)->execute();
         } catch (Throwable $throwable) {
             throw $throwable;
         }
