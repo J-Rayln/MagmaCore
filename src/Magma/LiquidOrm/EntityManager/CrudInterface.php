@@ -81,5 +81,5 @@ interface CrudInterface
      *                          for the query string.
      * @return mixed 
      */
-    public function rawQuery(string $rawQuery, array $conditions = []): mixed;
+    public function rawQuery(string $rawQuery, ?array $conditions = []): mixed;
 }
