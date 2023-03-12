@@ -42,7 +42,7 @@ class Crud implements CrudInterface
      */
     public function getSchema(): string
     {
-        return $this->tableSchema;
+        return (string)$this->tableSchema;
     }
 
     /**
@@ -52,7 +52,7 @@ class Crud implements CrudInterface
      */
     public function getSchemaID(): string
     {
-        return $this->tableSchemaID;
+        return (string)$this->tableSchemaID;
     }
 
     /**
